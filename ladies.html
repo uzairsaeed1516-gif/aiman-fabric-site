@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ladies Collection | Aiman Fabric</title>
+  <meta name="description" content="Explore ladies unstitched suit designs at Aiman Fabric.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap navbar">
+    <a class="brand" href="index.html">Aiman Fabric</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="ladies.html">Ladies</a>
+      <a href="kids.html">Kids</a>
+    </nav>
+    <a class="btn btn-small" href="https://wa.me/923413002751" target="_blank">WhatsApp</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow">Aiman Fabric Collection</span>
+      <h1>Ladies Unstitched Collection</h1>
+      <p>Apni pasand ke rang aur design chunein. Har design ki price aur availability WhatsApp par confirm karein.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="eyebrow">Find your favourite</span>
+        <h2>Our Ladies Designs</h2>
+        <p>Design par click karein aur WhatsApp par details pooch lein.</p>
+      </div>
+      <div class="product-grid" id="ladiesProducts"></div>
+    </div>
+  </section>
+
+  <section class="order-strip">
+    <div class="wrap">
+      <h2>Apna design pasand aa gaya?</h2>
+      <p>WhatsApp par design number bhejein aur price aur delivery ki tafseel pooch lein.</p>
+      <a class="btn" href="https://wa.me/923413002751?text=Assalam%20o%20Alaikum%2C%20mujhe%20Ladies%20collection%20ki%20details%20chahiye." target="_blank">Order on WhatsApp</a>
+    </div>
+  </section>
+</main>
+<section class="order-strip">
+  <div class="wrap">
+    <h2>Follow Aiman Fabric</h2>
+    <p>Hamari latest collections aur updates social media par dekhein.</p>
+    <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:20px">
+      <a class="btn" href="https://www.instagram.com/aiman.fabric/" target="_blank">Instagram</a>
+      <a class="btn" href="https://www.facebook.com/share/18s9bSbmYx/" target="_blank">Facebook</a>
+      <a class="btn" href="https://www.youtube.com/channel/UClzyJKndCQKOyNDF1zIoYUw" target="_blank">YouTube</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div><div class="footer-brand">Aiman Fabric</div><p>Style • Quality • Elegance</p></div>
+    <div><p>WhatsApp: <a href="https://wa.me/923413002751" target="_blank">+92 341 3002751</a></p><p>© <span id="year"></span> Aiman Fabric.</p></div>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/923413002751" target="_blank" aria-label="WhatsApp">☏</a>
+
+<script>
+const products = document.getElementById('ladiesProducts');
+
+for (let i = 1; i <= 19; i++) {
+  const number = String(i).padStart(2, '0');
+  const name = `Ladies Design ${number}`;
+  const message = encodeURIComponent(`Assalam o Alaikum! Mujhe Aiman Fabric ka ${name} pasand aaya hai. Iski price aur details bata dein.`);
+  products.innerHTML += `
+    <article class="product-card">
+      <img src="images/ladies-${number}.jpg" alt="${name}" loading="lazy">
+      <div class="product-info">
+        <h3>${name}</h3>
+        <p>Unstitched ladies suit</p>
+        <a class="btn" href="https://wa.me/923413002751?text=${message}" target="_blank" rel="noopener">Ask Price on WhatsApp</a>
+      </div>
+    </article>
+  `;
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
